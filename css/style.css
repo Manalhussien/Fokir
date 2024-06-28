@@ -1,0 +1,842 @@
+:root {
+    --main-color: #ff305b;
+    --second-color: #ccc;
+    --head-color: #222;
+}
+
+/*************************** reset *********************************************/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    line-height: 1.15;
+}
+
+.clr {
+    clear: both;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+img,
+iframe {
+    width: 100%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+/*************************** container *********************************************/
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+/*************************** start navbar *********************************************/
+.nav-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 0px;
+}
+
+.nav-bar .logo {
+    float: left;
+}
+
+.nav-bar .nav-list {
+    float: right;
+}
+
+.nav-bar label {
+    float: right;
+    color: var(--main-color);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+
+.nav-bar .logo h1 {
+    color: var(--main-color);
+    font-size: 1.5rem;
+}
+
+.nav-bar .nav-list li {
+    display: inline-block;
+}
+
+.nav-bar .nav-list li a {
+    color: #fff;
+    margin: 0px 15px;
+    transition: color 0.5s;
+    -webkit-transition: color 0.5s;
+    -moz-transition: color 0.5s;
+    -ms-transition: color 0.5s;
+    -o-transition: color 0.5s;
+}
+
+.nav-bar .nav-list li a.active {
+    color: var(--main-color);
+}
+
+.nav-bar .nav-list li a:hover {
+    color: var(--main-color);
+}
+
+.nav-bar input {
+    display: none;
+}
+
+/*************************** end navbar *********************************************/
+/*************************** start header *********************************************/
+.header {
+    color: #fff;
+    height: 100vh;
+    background-image: url('../images/home.jpg');
+    background-position: center center;
+    background-size: cover;
+}
+
+.header .layer {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.header .layer .header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.header .layer .header-content h2 {
+    color: var(--main-color);
+    font-size: 3rem;
+    margin: 10px 0;
+}
+
+.header .layer .header-content p {
+    font-size: 1.6rem;
+}
+
+/*************************** end header *********************************************/
+/*************************** head (service,portfolio,feedback,blog) *********************************************/
+#about,
+#service,
+#blog,
+#contact,
+#portfolio,
+#feedback {
+    margin: 50px 0px;
+    padding: 30px 0px;
+}
+
+.head {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    padding-top: 10px;
+}
+
+.head h2 {
+    color: var(--head-color);
+}
+
+.line {
+    width: 20%;
+    height: 1px;
+    background-color: var(--main-color);
+    margin: 15px auto;
+    position: relative;
+
+}
+
+.line::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 24%;
+    background-color: var(--main-color);
+    height: 1px;
+    width: 50%;
+    margin-top: 5px;
+
+}
+
+.line::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 26%;
+    background-color: var(--main-color);
+    height: 1px;
+    width: 50%;
+    margin-bottom: 5px;
+
+}
+
+/*************************** start about *********************************************/
+.about-img {
+    float: left;
+    width: 40%;
+    position: relative;
+}
+
+.about-img .border {
+    border: 7px solid rgb(51 51 51);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.about-img .border .image {
+    transform: translate(7%, 5%);
+    -webkit-transform: translate(7%, 5%);
+    -moz-transform: translate(7%, 5%);
+    -ms-transform: translate(7%, 5%);
+    -o-transform: translate(7%, 5%);
+}
+
+.image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.about-img .layer,
+.portfolio-content .layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    opacity: 0;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+}
+
+.image:hover .layer {
+    opacity: 1;
+    top: 0;
+}
+
+.about-img .image .layer .icon {
+    margin-top: 50%;
+    color: #fff;
+    padding: 10px;
+    font-size: 1.5rem;
+}
+
+.about-img .image .layer .icon i {
+    margin-right: 10px;
+    transition: color 0.5s;
+    -webkit-transition: color 0.5s;
+    -moz-transition: color 0.5s;
+    -ms-transition: color 0.5s;
+    -o-transition: color 0.5s;
+}
+
+.about-img .image .layer .icon i:hover {
+    color: var(--main-color);
+}
+
+.about-content {
+    float: right;
+    width: 50%;
+}
+
+.about-content h3 span {
+    color: var(--main-color);
+}
+
+.about-content .content h3 {
+    color: #333;
+    font-size: 2rem;
+}
+
+.about-content .content p {
+    color: #555555;
+    border-bottom: 1px dotted black;
+    margin-top: 10px;
+    padding-bottom: 15px;
+}
+
+.about-content .personal {
+    margin: 30px 0;
+}
+
+.about-content .personal .left {
+    float: left;
+    width: 40%;
+}
+
+.about-content .personal .right {
+    float: right;
+    width: 50%;
+}
+
+.about-content .personal .left ul li,
+.about-content .personal .right ul li {
+    padding: 5px 0px;
+}
+
+.about-content .personal .left ul li span,
+.about-content .personal .right ul li span {
+    font-weight: bold;
+    color: #333;
+    padding: 15px 0;
+}
+
+.about-content .personal .left ul li,
+.about-content .personal .right ul li {
+    color: #555555;
+}
+
+.about-content .about-button button {
+    background-color: var(--main-color);
+    padding: 10px 20px;
+    border-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    transition: background-color 1s;
+    -webkit-transition: background-color 1s;
+    -moz-transition: background-color 1s;
+    -ms-transition: background-color 1s;
+    -o-transition: background-color 1s;
+}
+
+.about-content .about-button button a {
+    color: #fff;
+}
+
+.about-content .about-button button:hover {
+    background-color: rgb(150, 29, 53);
+}
+
+/*************************** end about *********************************************/
+/*************************** start services *********************************************/
+.service {
+    padding: 20px 0px;
+    background-color: var(--second-color);
+}
+
+.service .service-cards {
+    padding: 20px;
+}
+
+.service .service-cards .item {
+    float: left;
+    width: calc(100% / 4);
+    text-align: center;
+    padding: 30px 10px;
+    font-size: 15px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+.service .service-cards .item i {
+    color: var(--main-color);
+    font-size: 1.4rem;
+    transition: transform 1s 0.5s;
+    -webkit-transition: transform 1s 0.5s;
+    -moz-transition: transform 1s 0.5s;
+    -ms-transition: transform 1s 0.5s;
+    -o-transition: transform 1s 0.5s;
+}
+
+.service .service-cards .item h3 {
+    font-size: 1.3rem;
+    padding: 20px 0px;
+    margin: 5px 0px;
+}
+
+.service .service-cards .item p {
+    color: #555555;
+    font-size: 15px;
+}
+
+.service .service-cards .item:hover {
+    background-color: #fff;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.service .service-cards .item:hover i {
+    transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+    -moz-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    -o-transform: scale(1.4);
+}
+
+/*************************** end  services *********************************************/
+/*************************** start portfolio *********************************************/
+.portfolio .portfolio-list {
+    text-align: center;
+}
+
+.portfolio .portfolio-list .nav li {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 0px 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.5s;
+    -webkit-transition: color 0.5s;
+    -moz-transition: color 0.5s;
+    -ms-transition: color 0.5s;
+    -o-transition: color 0.5s;
+}
+
+.portfolio .portfolio-list .nav li.active {
+    color: var(--main-color);
+}
+
+.portfolio .portfolio-list .nav li:hover {
+    color: var(--main-color);
+}
+
+.portfolio .portfolio-content {
+    margin: 10px 0px;
+}
+
+.portfolio .portfolio-content .item {
+    float: left;
+    width: calc(100% / 3);
+    padding: 5px 10px;
+}
+
+.portfolio .portfolio-content .item .image .layer i {
+    color: var(--main-color);
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+}
+
+/*************************** end portfolio *********************************************/
+/*************************** start feedback *********************************************/
+.feed-back .feed {
+    position: relative;
+    background-color: var(--second-color);
+    border-radius: 10px;
+    width: 70%;
+    margin: 1.4rem auto;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    overflow: hidden;
+}
+
+.feed .inner {
+    padding: 20px;
+    margin: 10px;
+}
+
+.feed .square {
+    width: 50%;
+    height: 130%;
+    background-color: var(--main-color);
+    position: absolute;
+    bottom: 50%;
+    left: -25%;
+    transform: rotate(50deg);
+    -webkit-transform: rotate(50deg);
+    -moz-transform: rotate(50deg);
+    -ms-transform: rotate(50deg);
+    -o-transform: rotate(50deg);
+
+}
+
+.feed .feed-content .personal-image {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+.feed .feed-content .personal-image img {
+    position: relative;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.feed .feed-content .personal-information {
+    float: left;
+    width: 80%;
+    padding: 0 3rem;
+}
+
+.personal-information h3,
+.personal-information .icon,
+.personal-information p {
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+}
+
+.personal-information h3 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.personal-information .icon,
+.personal-information p,
+.personal-information span {
+    color: #555555;
+}
+
+.personal-information .icon {
+    font-size: 1.3rem;
+    padding-right: 5px;
+}
+
+.personal-information p {
+    line-height: 1.4;
+}
+
+.personal-information .feed-icon i {
+    color: rgb(255, 215, 0);
+    font-size: 1.3rem;
+}
+
+/*************************** end feedback *********************************************/
+/*************************** start Blog *********************************************/
+.blog {
+    background-color: var(--second-color);
+}
+
+.blog .blog-content .box .inner {
+    margin: 10px;
+    background-color: #fff;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.blog .blog-content .box {
+    float: left;
+    width: calc(100% / 3);
+}
+
+.blog .blog-content .box img,
+.blog .blog-content .box iframe {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 5px;
+    height: 200px;
+}
+
+.blog .blog-content a,
+.blog .blog-content span,
+.blog .blog-content h4,
+.blog .blog-content p {
+    padding: 0px 10px 15px 10px;
+}
+
+.blog .blog-content .box h4 {
+    font-size: 1.5rem;
+    margin-top: 7px;
+    transition: color 0.5s;
+    -webkit-transition: color 0.5s;
+    -moz-transition: color 0.5s;
+    -ms-transition: color 0.5s;
+    -o-transition: color 0.5s;
+}
+
+.blog .blog-content .box h4:hover,
+.blog .blog-content .box a:hover {
+    color: var(--main-color);
+}
+
+.blog .blog-content p {
+    color: #333;
+    line-height: 1.4;
+}
+
+.blog .blog-content .box a {
+    font-weight: bold;
+}
+
+.box a .B-icon {
+    padding: 5px 0px 0px 5px;
+}
+
+/*************************** end Blog *********************************************/
+/*************************** start contact *********************************************/
+form.contact-content {
+    width: 70%;
+    margin: auto;
+}
+
+form.contact-content .data-form {
+    float: left;
+    width: 100%;
+    padding: 10px;
+}
+
+form.contact-content .data-form:nth-child(-n +2) {
+    width: 50%;
+}
+
+form.contact-content :is(input, textarea) {
+    border: 1px solid #adadad;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+form.contact-content textarea {
+    resize: none;
+    height: 140px;
+}
+
+form.contact-content button {
+    background-color: var(--main-color);
+    color: #fff;
+    border: unset;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+/*************************** end contact *********************************************/
+/*************************** start footer *********************************************/
+.footer {
+    background-color: var(--head-color);
+    color: #fff;
+    padding: 50px 0px;
+    text-align: center;
+}
+
+.footer .foot-icon i {
+    font-size: 1.8rem;
+    padding: 5px 5px;
+    cursor: pointer;
+    transition: color 0.5s;
+    -webkit-transition: color 0.5s;
+    -moz-transition: color 0.5s;
+    -ms-transition: color 0.5s;
+    -o-transition: color 0.5s;
+}
+
+.footer .foot-icon i:hover {
+    color: var(--main-color);
+}
+
+.footer .foot-content {
+    margin-top: 20px;
+}
+
+.footer .foot-content span {
+    color: var(--main-color);
+}
+
+/*************************** end footer *********************************************/
+/*************************** media query  *********************************************/
+@media screen and (max-width:991.98px) {
+    .nav-bar label {
+        display: block;
+    }
+
+    .nav-bar .nav-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: rgba(17, 17, 17, 0.445);
+        width: 100%;
+        float: unset;
+        height: 0;
+        overflow: hidden;
+        text-align: center;
+        transition: height .5s;
+        -webkit-transition: height .5s;
+        -moz-transition: height .5s;
+        -ms-transition: height .5s;
+        -o-transition: height .5s;
+    }
+
+    .nav-bar .nav-list li {
+        display: block;
+    }
+
+    .nav-bar .nav-list li a {
+        background-color: rgb(126, 111, 111);
+        padding: 10px 0;
+        margin: 10px 0;
+        display: block;
+
+    }
+
+    .nav-bar #menu:checked+.nav-list {
+        height: 90vh;
+    }
+
+    .about-img .border {
+        border: none;
+    }
+
+    .about-img,
+    .about-content {
+        width: 100%;
+    }
+
+    .about-content {
+        padding: 15px 0;
+    }
+
+    .about-img .border .image {
+        transform: translate(0%, 0%);
+        -webkit-transform: translate(0%, 0%);
+        -moz-transform: translate(0%, 0%);
+        -ms-transform: translate(0%, 0%);
+        -o-transform: translate(0%, 0%);
+    }
+
+    .service .service-cards .item {
+        width: 50%;
+        margin-bottom: 5px;
+    }
+
+    .feed .square {
+        bottom: 40%;
+    }
+
+}
+
+
+@media screen and (max-width:767.98px) {
+
+
+    .about-content .personal .left,
+    .about-content .personal .right {
+        width: 100%;
+    }
+
+    .about-content .about-button {
+        display: block;
+    }
+
+    .about-content .about-button .btn1 {
+        margin-left: 0;
+    }
+
+    .about-content .about-button button {
+        margin-top: 5px;
+    }
+
+    .service .service-cards .item {
+        width: 100%;
+        margin: 10px 0px;
+    }
+
+    .portfolio .portfolio-list .nav li {
+        padding: 0px 5px;
+    }
+
+    .portfolio .portfolio-content .item {
+        width: 100%;
+    }
+
+    .feed .feed-content .personal-image,
+    .feed .feed-content .personal-information {
+        width: 100%;
+    }
+
+    .feed .feed-content .personal-image img {
+        width: 50%;
+    }
+
+    .feed .feed-content .personal-information {
+        text-align: center;
+    }
+
+    .feed .square {
+        bottom: 35%;
+    }
+
+    .blog .blog-content .box {
+        width: 100%;
+    }
+
+    form.contact-content .data-form:nth-child(-n +2) {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width:575.98px) {
+    .header .layer .header-content h2 {
+        font-size: 2rem;
+    }
+
+    .header .layer .header-content p {
+        font-size: 0.8rem;
+    }
+
+    .feed .feed-content .personal-information {
+        padding: 0;
+    }
+
+    .feed .feed-content .personal-information h3,
+    .personal-information .feed-icon i {
+        font-size: 1.1rem;
+    }
+
+
+}
+
+/*************************** end  media query *********************************************/
